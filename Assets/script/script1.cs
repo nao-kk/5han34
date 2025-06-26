@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gamecontroller : MonoBehaviour
+public class script1 : MonoBehaviour
 {
     void Start()
     {
