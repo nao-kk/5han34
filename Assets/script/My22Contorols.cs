@@ -4,15 +4,15 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Mallet : MonoBehaviour
+public class Player2Movement : MonoBehaviour
 {
-    
+
     [SerializeField, Header("移動速度")]
     private float moveSpeed = 5.0f;
 
     private Rigidbody rb;
     private Vector2 moveInput;
-     private MyControls controls;
+    private MyControls controls;
 
     private void Awake()
     {
@@ -24,11 +24,12 @@ public class Mallet : MonoBehaviour
         controls = new MyControls();
         Debug.Log("スタートチェック");
 
-        
+
     }
     void Start()
     {
-        
+        Onable();
+        //controls.player.move.performed + = OnMovePerformed;
     }
     private void Onable()
     {
@@ -46,20 +47,22 @@ public class Mallet : MonoBehaviour
     //Moveの入力を受け取り、Rigidbodyを使ってボールを動かす
     private void FixedUpdate()
     {
-       // Debug.Log("入力待機中");
+        OnMovePerformed(controls.player.move.ReadValue<Vector2>());
+        
+        //Debug.Log("入力待機中");
         // 前後左右への移動を処理
         if (rb != null)
         {
             Vector3 move = new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed * Time.fixedDeltaTime;
             rb.MovePosition(rb.position + move);
-            Debug.Log(rb.position + move);
+            //Debug.Log(rb.position + move);
         }
     }
 
-    private void OnMovePerformed(InputAction.CallbackContext context)
+    private void OnMovePerformed(Vector2 context)
     {
         // Moveアクションの値を取得
-        moveInput = context.ReadValue<Vector2>();
+        moveInput = context;
         Debug.Log("動き");
     }
 
@@ -67,6 +70,6 @@ public class Mallet : MonoBehaviour
     {
         // Moveの入力が無くなったら移動を止める
         moveInput = Vector2.zero;
- 
+
     }
 }
