@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Goal2 : MonoBehaviour
 {
+    public TMP_Text score1;
     public AudioClip sound2;
     private AudioSource audioSource;
+    public int score3 = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +26,13 @@ public class Goal2 : MonoBehaviour
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         if (collider.gameObject.tag == "goal")
         {
-            rigidbody.velocity = Vector3.zero;
-            rigidbody.angularVelocity = Vector3.zero;
-            FindObjectOfType<oldscore2>().AddPoint(1);
+            Destroy(this.gameObject);
             audioSource = GetComponent<AudioSource>();
             audioSource.PlayOneShot(sound2);
+            Debug.Log("1P‚Ì“¾“_");
+            score3++;
+
+            score1.text = score3.ToString();
         }
     }
 }
