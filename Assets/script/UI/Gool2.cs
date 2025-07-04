@@ -9,6 +9,7 @@ public class Goal2 : MonoBehaviour
     public AudioClip sound2;
     private AudioSource audioSource;
     public int score3 = 0;
+    public GameObject pacPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -24,14 +25,13 @@ public class Goal2 : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         Rigidbody rigidbody = GetComponent<Rigidbody>();
-        if (collider.gameObject.tag == "goal")
+        if (collider.gameObject.tag == "pac")
         {
-            Destroy(this.gameObject);
+            Destroy(collider.gameObject);
             audioSource = GetComponent<AudioSource>();
             audioSource.PlayOneShot(sound2);
             Debug.Log("1P‚Ì“¾“_");
             score3++;
-
             score1.text = score3.ToString();
         }
     }

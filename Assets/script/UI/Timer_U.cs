@@ -5,8 +5,8 @@ using UnityEngine.UI; // UIを使うときに必要
 
 public class Timer_U: MonoBehaviour
 {
-    public  Goal2 Goal2;
-    public  Goal1 Goal1;
+    [SerializeField] private  Goal2 Goal2;
+    [SerializeField] private  Goal1 Goal1;
     //カウントダウン
     public float countdown = 5.0f;
 
@@ -15,8 +15,7 @@ public class Timer_U: MonoBehaviour
 
     private void Start()
     {
-        Goal2 = GetComponent<Goal2>();
-        Goal1 = GetComponent<Goal1>();
+       
     }
 
     // Update is called once per frame
@@ -34,11 +33,11 @@ public class Timer_U: MonoBehaviour
             timeText.text = "時間になりました！";
             if(Goal2.score3 < Goal1.score4) 
             {
-             Debug.Log("1Pの勝ちです！");
+             Debug.Log("2Pの勝ちです！");
             }
             else if(Goal2.score3 > Goal1.score4) 
             {
-                Debug.Log("2Pの勝ちです！");
+                Debug.Log("1Pの勝ちです！");
             }
             else 
             {
