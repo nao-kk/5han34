@@ -1,33 +1,74 @@
 using System.Collections;
+
 using System.Collections.Generic;
+
 using UnityEngine;
 
-
-[RequireComponent(typeof(Rigidbody))]
 public class pack : MonoBehaviour
 
 {
+
+    private float power;
+
     Rigidbody rb;
-    public float fprce;//パックを移動させるために加える力
-    private BoxCollider col;
-    PhysicMaterial material, iceMaterial;
+
+    public float bounceFactor = 1f;  // 反射の強さ
+
+    public float forceMultiplier = 10f;  // 反射後に加える追加の力（強さ
 
     // Start is called before the first frame update
+
     void Start()
+
     {
-      rb = gameObject.GetComponent<Rigidbody>();//Rigidbodyを取得
-        rb.constraints = RigidbodyConstraints.FreezeRotation;//パックを回転させない。
-        GetComponent<BoxCollider>();//BoxColliderの取得
-        material = new PhysicMaterial();//ステージのphysicalマテリアルを生成。
-        material.staticFriction = 1;//ステージの静止摩擦係数を設定。
-        material.dynamicFriction = 1;//ステージの動摩擦係数を設定。
-        col.material = material;//ステージ用physicmマテリアルをColliderに追加する。
+
+        power = 10.0f;
+
+        rb = GetComponent<Rigidbody>();
+
+        rb.AddForce(transform.up * power, ForceMode.Impulse);
 
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter(Collision other)
+
     {
-        
+
+        if (other.gameObject.CompareTag("Wall"))
+
+        {
+
+            //float randomDir =Random.Range(-power,power);
+
+            //rb.velocity = Vector3.zero;
+
+            //rb.AddForce(randomDir, -power, 0, ForceMode.Impulse);
+
+            Vector3 incomingVector = other.relativeVelocity;//入射ベクトルの設定
+
+            Vector3 normal = other.contacts[0].normal;//ぶつかった時のベクトル設定
+
+            Vector3 reflectedVector = Vector3.Reflect(incomingVector, normal);//反射ベクトルの設定
+
+
+
+            Rigidbody rb = GetComponent<Rigidbody>();
+
+            if (rb != null)
+
+            {
+
+                // 反射後の速度を決める
+
+                rb.velocity = reflectedVector;
+
+                rb.AddForce(reflectedVector * forceMultiplier, ForceMode.Impulse);
+
+            }
+
+        }
+
     }
+
 }
+
