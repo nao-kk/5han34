@@ -10,6 +10,8 @@ public class Goal1 : MonoBehaviour
     private AudioSource audioSource;
     public int score4 = 0;
     public GameObject pacPrefab;
+    private int RandomNumber = 0;//追加　ランダムに出てきた数値を保存するよう
+    private int itemswitch = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +22,11 @@ public class Goal1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //デバッグ用
+        RandomGet();//RandomGetを呼び出す
+        itemswith();//itemswithを呼び出す
     }
+
     private void OnTriggerEnter(Collider collider)
     {
         Rigidbody rigidbody = GetComponent<Rigidbody>();
@@ -33,7 +38,65 @@ public class Goal1 : MonoBehaviour
             Debug.Log("2Pの得点");
             score4++;
             score2.text = score4.ToString();
+            RandomItem();//追加
+        }
+    }
 
+    private void RandomItem()
+    {
+        int num = Random.Range(1, 4);   // 1～3までの整数からランダムで取得する
+        RandomNumber = num;//RandomNumberという変数に先ほどのランダムに出た数値を保存
+    }
+
+    //追加
+    private void RandomGet()
+    {
+
+        if (RandomNumber == 1)
+        {
+            Debug.Log("プレイヤー１がアイテム1を手に入れた");
+            itemswitch = 1;// アイテム１を取得
+            RandomNumber = 0;//数値を0に戻す
+        }
+        else if (RandomNumber == 2)
+        {
+            Debug.Log("プレイヤー１がアイテム2を手に入れた");
+            itemswitch = 2;// アイテム１を取得
+            RandomNumber = 0;//数値を0に戻す
+        }
+        else if (RandomNumber == 3)
+        {
+            Debug.Log("プレイヤー１がアイテム3を手に入れた");
+            itemswitch = 3;// アイテム１を取得
+            RandomNumber = 0;//数値を0に戻す
+        }
+    }
+
+    private void itemswith()
+    {
+        if (itemswitch == 1)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                Debug.Log("プレイヤー1がアイテム1を使用した");
+                itemswitch = 0;//数値を0に戻す
+            }
+        }
+        else if (itemswitch == 2)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                Debug.Log("プレイヤー1がアイテム2を使用した");
+                itemswitch = 0;//数値を0に戻す
+            }
+        }
+        else if (itemswitch == 3)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                Debug.Log("プレイヤー1がアイテム3を使用した");
+                itemswitch = 0;//数値を0に戻す
+            }
         }
     }
 }
