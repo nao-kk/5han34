@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     [SerializeField, Header("移動速度")]
-    private float moveSpeed = 50.0f;
+    private float moveSpeed = 30.0f;
 
     private Rigidbody rb;
     private Vector2 moveInput;
@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
         // MyControlsのインスタンスを作成
         controls = new MyControls();
         Debug.Log("スタートチェック");
+
+
 
 
     }
@@ -47,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     //Moveの入力を受け取り、Rigidbodyを使ってボールを動かす
     private void FixedUpdate()
     {
-        OnMovePerformed(controls.player.move.ReadValue<Vector2>());
+        OnMovePerformed(controls.Player1.Move.ReadValue<Vector2>());
         
         //Debug.Log("入力待機中");
         // 前後左右への移動を処理

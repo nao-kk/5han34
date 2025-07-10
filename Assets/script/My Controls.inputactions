@@ -2,11 +2,11 @@
     "name": "My Controls",
     "maps": [
         {
-            "name": "player",
+            "name": "Player1",
             "id": "06794f34-64fd-4e62-b59c-109c85516796",
             "actions": [
                 {
-                    "name": "move",
+                    "name": "Move",
                     "type": "Value",
                     "id": "55724537-8ed9-42f2-b9d1-e7c89096099a",
                     "expectedControlType": "Vector2",
@@ -23,7 +23,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "move",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
