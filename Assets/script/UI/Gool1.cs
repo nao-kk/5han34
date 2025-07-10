@@ -11,7 +11,7 @@ public class Goal1 : MonoBehaviour
     public int score4 = 0;
     public GameObject pacPrefab;
     private int RandomNumber = 0;//追加　ランダムに出てきた数値を保存するよう
-    private int itemswitch = 0;
+    private int itemswitch = 0;//今所持しているアイテムは何かの判定用
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,6 @@ public class Goal1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //デバッグ用
         RandomGet();//RandomGetを呼び出す
         itemswith();//itemswithを呼び出す
     }
@@ -32,12 +31,12 @@ public class Goal1 : MonoBehaviour
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         if (collider.gameObject.tag == "pac")
         {
-            Destroy(collider.gameObject);
-            audioSource = GetComponent<AudioSource>();
-            audioSource.PlayOneShot(sound2);
+            Destroy(collider.gameObject);//ゴールに入ったパックを削除
+            audioSource = GetComponent<AudioSource>();//効果音を取得
+            audioSource.PlayOneShot(sound2);//ゴールに入ったら効果音を再生
             Debug.Log("2Pの得点");
             score4++;
-            score2.text = score4.ToString();
+            score2.text = score4.ToString();//画面上にスコアを表示
             RandomItem();//追加
         }
     }
@@ -61,13 +60,13 @@ public class Goal1 : MonoBehaviour
         else if (RandomNumber == 2)
         {
             Debug.Log("プレイヤー１がアイテム2を手に入れた");
-            itemswitch = 2;// アイテム１を取得
+            itemswitch = 2;// アイテム2を取得
             RandomNumber = 0;//数値を0に戻す
         }
         else if (RandomNumber == 3)
         {
             Debug.Log("プレイヤー１がアイテム3を手に入れた");
-            itemswitch = 3;// アイテム１を取得
+            itemswitch = 3;// アイテム3を取得
             RandomNumber = 0;//数値を0に戻す
         }
     }

@@ -16,10 +16,11 @@ public class Resurrection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject[] pacs = GameObject.FindGameObjectsWithTag("pac");
+        GameObject[] pacs = GameObject.FindGameObjectsWithTag("pac");//pacタグを取得
 
-        if (pacs.Length == 0)
+        if (pacs.Length == 0)//pacのタグがついたオブジェクトがなくなると動く
         {
+            //pacを生成
             spawnedPac = Instantiate(pacPrefab, transform.position, transform.rotation);
         }
     }

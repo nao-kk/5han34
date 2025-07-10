@@ -1,45 +1,42 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // UIを使うときに必要
+using UnityEngine.UI;
 
 public class Timer_U: MonoBehaviour
 {
     [SerializeField] private  Goal2 Goal2;
     [SerializeField] private  Goal1 Goal1;
-    //カウントダウン
-    public float countdown = 5.0f;
-
-    //時間を表示するText型の変数
-    public Text timeText;
+    public float countdownMinutes = 3;
+    private float countdownSeconds;
+    private Text timeText;
 
     private void Start()
     {
-       
+        timeText = GetComponent<Text>();
+        countdownSeconds = countdownMinutes * 60;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //時間をカウントダウンする
-        countdown -= Time.deltaTime;
+        countdownSeconds -= Time.deltaTime;
+        var span = new TimeSpan(0, 0, (int)countdownSeconds);
+        timeText.text = span.ToString(@"mm\:ss");
 
-        //時間を表示する
-        timeText.text = countdown.ToString("f1") + "秒";
-
-        //countdownが0以下になったとき
-        if (countdown <= 0)
+        if (countdownSeconds <= 0)
         {
-            timeText.text = "時間になりました！";
-            if(Goal2.score3 < Goal1.score4) 
+            // 0秒になったときの処理
+            timeText.text = "Game Set!";
+            if (Goal2.score3 < Goal1.score4)
             {
-             Debug.Log("2Pの勝ちです！");
+                Debug.Log("2Pの勝ちです！");
             }
-            else if(Goal2.score3 > Goal1.score4) 
+            else if (Goal2.score3 > Goal1.score4)
             {
                 Debug.Log("1Pの勝ちです！");
             }
-            else 
+            else
             {
                 Debug.Log("引き分けです！");
             }
