@@ -5,9 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - pac
-  - goal1
+  - goal
   - goal2
-  - Wall
   layers:
   - Default
   - TransparentFX
