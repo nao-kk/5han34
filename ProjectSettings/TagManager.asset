@@ -4,6 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - pac
+  - goal1
+  - goal2
   - Wall
   layers:
   - Default
