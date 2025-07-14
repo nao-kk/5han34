@@ -938,7 +938,7 @@ Transform:
   m_GameObject: {fileID: 508837878}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0.21, z: -2.65}
+  m_LocalPosition: {x: 4.09, y: 0.21, z: -2.65}
   m_LocalScale: {x: 0.81292886, y: 2.1087, z: 10.731206}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1101,7 +1101,7 @@ Transform:
   m_GameObject: {fileID: 830143062}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.92, y: -0.1, z: -0.65}
+  m_LocalPosition: {x: 5.35, y: -0.1, z: -0.65}
   m_LocalScale: {x: 2.6971, y: 2.6971, z: 2.6971}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1236,7 +1236,7 @@ Transform:
   m_GameObject: {fileID: 1119006823}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.39, y: 0.19, z: -1.22}
+  m_LocalPosition: {x: -2.42, y: 0.19, z: -1.22}
   m_LocalScale: {x: 0.9242932, y: 2.1087, z: 10.96487}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1717,7 +1717,7 @@ Transform:
   m_GameObject: {fileID: 1761689966}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.46, y: -0.1, z: -0.65}
+  m_LocalPosition: {x: -3.66, y: -0.1, z: -0.65}
   m_LocalScale: {x: 2.6971, y: 2.6971, z: 2.6971}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2118,7 +2118,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1944758067970940275, guid: e2efb50141ce2824fa461d1a557fd976, type: 3}
       propertyPath: bounceFactor
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1944758067970940275, guid: e2efb50141ce2824fa461d1a557fd976, type: 3}
       propertyPath: forceMultiplier
@@ -2126,7 +2126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2729029707472260762, guid: e2efb50141ce2824fa461d1a557fd976, type: 3}
       propertyPath: m_CollisionDetection
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7191887063639289889, guid: e2efb50141ce2824fa461d1a557fd976, type: 3}
       propertyPath: m_Name
