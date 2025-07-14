@@ -56,8 +56,8 @@ public class PlayerMovementSub : MonoBehaviour
         //if (rb != null)
         {
             rb ??= GetComponent<Rigidbody>();
-            Vector3 move = new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed * Time.fixedDeltaTime;
-            rb.MovePosition(rb.position + move);
+            Vector3 velocity = new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed;
+            rb.velocity = velocity;
             //Debug.Log(rb.position + move);
         }
     }

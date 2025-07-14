@@ -8,6 +8,9 @@ public class Timer_U: MonoBehaviour
 {
     [SerializeField] private  Goal2 Goal2;
     [SerializeField] private  Goal1 Goal1;
+    [SerializeField] GameObject Win1P; 
+    [SerializeField] GameObject Win2P;
+    [SerializeField] GameObject Draw;
     public float countdownMinutes = 3;
     private float countdownSeconds;
     private Text timeText;
@@ -31,14 +34,17 @@ public class Timer_U: MonoBehaviour
             if (Goal2.score3 < Goal1.score4)
             {
                 Debug.Log("2PÇÃèüÇøÇ≈Ç∑ÅI");
+                Win2P.SetActive(true);
             }
             else if (Goal2.score3 > Goal1.score4)
             {
                 Debug.Log("1PÇÃèüÇøÇ≈Ç∑ÅI");
+                Win1P.SetActive(true);
             }
             else
             {
                 Debug.Log("à¯Ç´ï™ÇØÇ≈Ç∑ÅI");
+                Draw.SetActive(true);
             }
         }
     }
