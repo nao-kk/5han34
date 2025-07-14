@@ -7,6 +7,8 @@ TagManager:
   - pac
   - goal
   - goal2
+  - Wall
+  - ace8Surface8
   layers:
   - Default
   - TransparentFX

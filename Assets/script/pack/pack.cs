@@ -34,7 +34,7 @@ public class pack : MonoBehaviour
 
     {
 
-        if (other.gameObject.CompareTag("Wall"))
+        if (other.gameObject.CompareTag("ace8Surface8"))
 
         {
 
