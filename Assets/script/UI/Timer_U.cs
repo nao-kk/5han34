@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Timer_U: MonoBehaviour
 {
@@ -13,11 +14,11 @@ public class Timer_U: MonoBehaviour
     [SerializeField] GameObject Draw;
     public float countdownMinutes = 3;
     private float countdownSeconds;
-    private Text timeText;
+    public TMP_Text time;
 
     private void Start()
     {
-        timeText = GetComponent<Text>();
+        time = GetComponent<TMP_Text>();
         countdownSeconds = countdownMinutes * 60;
     }
 
@@ -25,12 +26,12 @@ public class Timer_U: MonoBehaviour
     {
         countdownSeconds -= Time.deltaTime;
         var span = new TimeSpan(0, 0, (int)countdownSeconds);
-        timeText.text = span.ToString(@"mm\:ss");
+        time.text = span.ToString(@"mm\:ss");
 
         if (countdownSeconds <= 0)
         {
             // 0•b‚É‚È‚Á‚½‚Æ‚«‚Ìˆ—
-            timeText.text = "Game Set!";
+            time.text = "Game Set!";
             if (Goal2.score3 < Goal1.score4)
             {
                 Debug.Log("2P‚ÌŸ‚¿‚Å‚·I");
