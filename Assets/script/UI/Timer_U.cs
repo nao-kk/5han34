@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Timer_U: MonoBehaviour
 {
@@ -68,6 +69,12 @@ public class Timer_U: MonoBehaviour
                 Debug.Log("ˆø‚«•ª‚¯‚Å‚·I");
                 Draw.SetActive(true);
             }
+            Invoke("title", 3.5f);
         }
+    }
+
+    void title()
+    {
+        SceneManager.LoadScene("title");
     }
 }
