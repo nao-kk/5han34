@@ -31,8 +31,6 @@ public class Goal2 : MonoBehaviour
         if (collider.gameObject.tag == "pac")
         {
             Destroy(collider.gameObject);//ゴールに入ったパックを削除
-            audioSource = GetComponent<AudioSource>();
-            audioSource.PlayOneShot(sound2);//ゴールに入ったら効果音を再生
             Debug.Log("1Pの得点");
             score3++;
             score1.text = score3.ToString();//画面上にスコアを表示

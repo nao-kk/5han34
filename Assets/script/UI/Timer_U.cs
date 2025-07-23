@@ -9,12 +9,16 @@ public class Timer_U: MonoBehaviour
 {
     [SerializeField] private  Goal2 Goal2;
     [SerializeField] private  Goal1 Goal1;
+    [SerializeField] private TMP_Text CountText;
     [SerializeField] GameObject Win1P; 
     [SerializeField] GameObject Win2P;
     [SerializeField] GameObject Draw;
     public float countdownMinutes = 3;
     private float countdownSeconds;
     public TMP_Text time;
+    public TMP_Text contdowntime;
+    float countdown = 4f;
+    int count;
 
     private void Start()
     {
@@ -23,6 +27,23 @@ public class Timer_U: MonoBehaviour
     }
 
     void Update()
+    {
+
+        if (countdown >= 0)
+        {
+            countdown -= Time.deltaTime;
+            count = (int)countdown;
+            CountText.text = count.ToString();
+        }
+        else
+        {
+            contdowntime.text = "Game Start!";
+            CountText.text = "";
+            Counttime();
+        }
+    }
+
+    void Counttime()
     {
         countdownSeconds -= Time.deltaTime;
         var span = new TimeSpan(0, 0, (int)countdownSeconds);
