@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.VisionOS;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,11 +25,8 @@ public class PlayerMovementSub : MonoBehaviour
         // MyControlsのインスタンスを作成
         controls = new MyControls();
         Debug.Log("スタートチェック");
-
-
-
-
     }
+
     void Start()
     {
         Onable();

@@ -1771,6 +1771,7 @@ GameObject:
   - component: {fileID: 1188217467}
   - component: {fileID: 1188217466}
   - component: {fileID: 1188217468}
+  - component: {fileID: 1188217469}
   m_Layer: 0
   m_Name: Resurrection
   m_TagString: Untagged
@@ -1816,6 +1817,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd565d9690b6f504fb41b9e043251530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1188217469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188217465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 233ef9fd414d28d48b252017f5808e5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1554576838
@@ -2770,8 +2783,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2121401784}
   - component: {fileID: 2121401783}
-  - component: {fileID: 2121401785}
-  - component: {fileID: 2121401786}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -2838,30 +2849,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2121401785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121401782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04475d7453c58154ebd39525ca56eb58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2121401786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121401782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 233ef9fd414d28d48b252017f5808e5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2128977149
 GameObject:
   m_ObjectHideFlags: 0
