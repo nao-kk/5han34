@@ -2761,6 +2761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2121401784}
   - component: {fileID: 2121401783}
+  - component: {fileID: 2121401785}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -2783,7 +2784,7 @@ MonoBehaviour:
   m_NotificationBehavior: 0
   m_MaxPlayerCount: -1
   m_AllowJoining: 1
-  m_JoinBehavior: 0
+  m_JoinBehavior: 2
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2827,6 +2828,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2121401785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121401782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14db7f8c0cf597244b9e437eead19fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerJoinInputAction:
+    m_Name: Player Join Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b0add7d2-cb90-4058-9a8c-e655a3f9660a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  playerPrefab: {fileID: 9163520249753667933, guid: a83cd6064ae62bf429c4c95c847ad1f6, type: 3}
+  maxPlayerCount: 2
 --- !u!1 &2128977149
 GameObject:
   m_ObjectHideFlags: 0

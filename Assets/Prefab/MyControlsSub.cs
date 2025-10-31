@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MyContorolsSub : MonoBehaviour
+public class PlayerMovementSub : MonoBehaviour
 {
 
     [SerializeField, Header("移動速度")]
