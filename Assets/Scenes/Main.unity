@@ -1596,8 +1596,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294953896
-  m_fontColor: {r: 0.6603774, g: 0.7961913, b: 1, a: 1}
+    rgba: 4289244415
+  m_fontColor: {r: 1, g: 0.67291886, b: 0.65882355, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1978,8 +1978,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4291940863
-  m_fontColor: {r: 1, g: 0.8207547, b: 0.8207547, a: 1}
+    rgba: 4294624434
+  m_fontColor: {r: 0.69882524, g: 0.7684071, b: 0.9811321, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2847,10 +2847,43 @@ MonoBehaviour:
     m_Id: b0add7d2-cb90-4058-9a8c-e655a3f9660a
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 5ac0e8b3-2f22-4780-810a-b3e0764740b4
+      m_Path: <Gamepad>/buttonEast
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Join Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 1e238f6e-702b-40ff-b355-836c678b400c
+      m_Path: <Gamepad>/buttonNorth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Join Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: bb881f53-40a0-47e2-b09b-44c00649bee7
+      m_Path: <Gamepad>/buttonSouth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Join Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 6c6eb870-c37e-4aaf-9860-a6a1ae54c629
+      m_Path: <Gamepad>/buttonWest
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Join Input
+      m_Flags: 0
     m_Flags: 0
   playerPrefab: {fileID: 9163520249753667933, guid: a83cd6064ae62bf429c4c95c847ad1f6, type: 3}
   maxPlayerCount: 2
+  MalletMaterial: {fileID: 2100000, guid: 2e6b8f5905b704b47888a0600d0a6a72, type: 2}
 --- !u!1 &2128977149
 GameObject:
   m_ObjectHideFlags: 0

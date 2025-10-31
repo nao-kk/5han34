@@ -2,29 +2,31 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// ƒvƒŒƒCƒ„[‚Ì“ü‘Şº‚ÌŠÇ—ƒNƒ‰ƒXiƒAƒEƒgƒQ[ƒ€j
+/// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å…¥é€€å®¤ã®ç®¡ç†ã‚¯ãƒ©ã‚¹ï¼ˆã‚¢ã‚¦ãƒˆã‚²ãƒ¼ãƒ ï¼‰
 /// </summary>
-public class PlayerJoinManager : MonoBehaviour
+public class Malletrespawn: MonoBehaviour
 {
-    // ƒvƒŒƒCƒ„[‚ªƒQ[ƒ€‚ÉJoin‚·‚é‚½‚ß‚ÌInputAction
+    // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒã‚²ãƒ¼ãƒ ã«Joinã™ã‚‹ãŸã‚ã®InputAction
     [SerializeField] private InputAction playerJoinInputAction = default;
-    // PlayerInput‚ªƒAƒ^ƒbƒ`‚³‚ê‚Ä‚¢‚éƒvƒŒƒCƒ„[ƒIƒuƒWƒFƒNƒg
+    // PlayerInputãŒã‚¢ã‚¿ãƒƒãƒã•ã‚Œã¦ã„ã‚‹ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] private PlayerInput playerPrefab = default;
-    // Å‘åQ‰Ál”
+    // æœ€å¤§å‚åŠ äººæ•°
     [SerializeField] private int maxPlayerCount = default;
 
-    // JoinÏ‚İ‚ÌƒfƒoƒCƒXî•ñ
+    // Joinæ¸ˆã¿ã®ãƒ‡ãƒã‚¤ã‚¹æƒ…å ±
     private InputDevice[] joinedDevices = default;
-    // Œ»İ‚ÌƒvƒŒƒCƒ„[”
+    // ç¾åœ¨ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼æ•°
     private int currentPlayerCount = 0;
+
+    public Material MalletMaterial;
 
 
     private void Awake()
     {
-        // Å‘åQ‰Á‰Â”\”‚Å”z—ñ‚ğ‰Šú‰»
+        // æœ€å¤§å‚åŠ å¯èƒ½æ•°ã§é…åˆ—ã‚’åˆæœŸåŒ–
         joinedDevices = new InputDevice[maxPlayerCount];
 
-        // InputAction‚ğ—LŒø‰»‚µAƒR[ƒ‹ƒoƒbƒN‚ğİ’è
+        // InputActionã‚’æœ‰åŠ¹åŒ–ã—ã€ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã‚’è¨­å®š
         playerJoinInputAction.Enable();
         playerJoinInputAction.performed += OnJoin;
     }
@@ -35,17 +37,20 @@ public class PlayerJoinManager : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒfƒoƒCƒX‚É‚æ‚Á‚ÄJoin—v‹‚ª”­‰Î‚µ‚½‚Æ‚«‚ÉŒÄ‚Î‚ê‚éˆ—
+    /// ãƒ‡ãƒã‚¤ã‚¹ã«ã‚ˆã£ã¦Joinè¦æ±‚ãŒç™ºç«ã—ãŸã¨ãã«å‘¼ã°ã‚Œã‚‹å‡¦ç†
     /// </summary>
     private void OnJoin(InputAction.CallbackContext context)
     {
-        // ƒvƒŒƒCƒ„[”‚ªÅ‘å”‚É’B‚µ‚Ä‚¢‚½‚çAˆ—‚ğI—¹
+        GameObject playerObject = playerPrefab.gameObject;
+
+        // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼æ•°ãŒæœ€å¤§æ•°ã«é”ã—ã¦ã„ãŸã‚‰ã€å‡¦ç†ã‚’çµ‚äº†
         if (currentPlayerCount >= maxPlayerCount)
         {
+            Debug.Log("ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’çµ‚äº†ã—ã¾ã™");
             return;
         }
 
-        // Join—v‹Œ³‚ÌƒfƒoƒCƒX‚ªŠù‚ÉQ‰ÁÏ‚İ‚Ì‚Æ‚«Aˆ—‚ğI—¹
+        // Joinè¦æ±‚å…ƒã®ãƒ‡ãƒã‚¤ã‚¹ãŒæ—¢ã«å‚åŠ æ¸ˆã¿ã®ã¨ãã€å‡¦ç†ã‚’çµ‚äº†
         foreach (var device in joinedDevices)
         {
             if (context.control.device == device)
@@ -54,15 +59,32 @@ public class PlayerJoinManager : MonoBehaviour
             }
         }
 
-        // PlayerInput‚ğŠ‚µ‚½‰¼‘z‚ÌƒvƒŒƒCƒ„[‚ğƒCƒ“ƒXƒ^ƒ“ƒX‰»
-        // ¦Join—v‹Œ³‚ÌƒfƒoƒCƒXî•ñ‚ğ•R‚Ã‚¯‚ÄƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬‚·‚é
-        PlayerInput.Instantiate(
-            prefab: playerPrefab.gameObject,
+        // PlayerInputã‚’æ‰€æŒã—ãŸä»®æƒ³ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–
+        // â€»Joinè¦æ±‚å…ƒã®ãƒ‡ãƒã‚¤ã‚¹æƒ…å ±ã‚’ç´ã¥ã‘ã¦ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç”Ÿæˆã™ã‚‹
+        var newPlayer = PlayerInput.Instantiate(
+            prefab: playerObject,
             playerIndex: currentPlayerCount,
             pairWithDevice: context.control.device
             );
 
-        // Join‚µ‚½ƒfƒoƒCƒXî•ñ‚ğ•Û‘¶
+        if (currentPlayerCount == 1)
+        {
+            newPlayer.transform.position = new Vector3(-0.7f, 0f, -0.4f); // å¥½ããªåº§æ¨™ã«å¤‰æ›´
+        }
+
+        var renderers = newPlayer.GetComponentsInChildren<Renderer>();
+        if (currentPlayerCount == 1 && renderers.Length > 0)
+        {
+            Debug.Log("ã™ã¹ã¦ã®Rendererã®ãƒãƒ†ãƒªã‚¢ãƒ«ã‚’å¤‰æ›´ã—ã¾ã™");
+            foreach (var r in renderers)
+            {
+                r.material = MalletMaterial;
+            }
+        }
+
+
+
+        // Joinã—ãŸãƒ‡ãƒã‚¤ã‚¹æƒ…å ±ã‚’ä¿å­˜
         joinedDevices[currentPlayerCount] = context.control.device;
 
         currentPlayerCount++;
