@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2729029707472260762}
   - component: {fileID: 5823340607099916960}
   - component: {fileID: 1944758067970940275}
+  - component: {fileID: -887379885354630408}
   m_Layer: 0
   m_Name: "\u30D1\u30C3\u30AF 1"
   m_TagString: pac
@@ -149,3 +150,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounceFactor: 5
   forceMultiplier: 0.1
+--- !u!114 &-887379885354630408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7191887063639289889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa663097a5b56f4abf1ab5095c484ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSE: {fileID: 8300000, guid: ef79c0192906be940a8ba573236a88cf, type: 3}

@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 541220979f29af644b8dd0a0cb37c2a7, type: 3}
       propertyPath: m_TagString
-      value: ace8Surface8
+      value: Puck
       objectReference: {fileID: 0}
     - target: {fileID: 1507767883509144192, guid: 541220979f29af644b8dd0a0cb37c2a7, type: 3}
       propertyPath: m_TagString
@@ -97,6 +97,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 541220979f29af644b8dd0a0cb37c2a7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6917457571064878052}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 541220979f29af644b8dd0a0cb37c2a7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1648160673636942619}
     - targetCorrespondingSourceObject: {fileID: 3779745573541866595, guid: 541220979f29af644b8dd0a0cb37c2a7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8998413018973160685}
@@ -222,6 +225,19 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 3
+--- !u!114 &-1648160673636942619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7133231595619063895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa663097a5b56f4abf1ab5095c484ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSE: {fileID: 8300000, guid: ef79c0192906be940a8ba573236a88cf, type: 3}
 --- !u!1 &8850584133789073286 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1507767883509144192, guid: 541220979f29af644b8dd0a0cb37c2a7, type: 3}

@@ -9,6 +9,7 @@ TagManager:
   - goal2
   - Wall
   - ace8Surface8
+  - Puck
   layers:
   - Default
   - TransparentFX
